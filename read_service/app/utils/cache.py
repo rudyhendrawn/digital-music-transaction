@@ -1,4 +1,4 @@
-import aioredis
+import redis.asyncio as redis
 import pickle
 from functools import wraps
 from app.core.config import settings
@@ -9,7 +9,8 @@ class RedisCache:
 		self.redis = None
 
 	async def initialize(self):
-		self.redis = await aioredis.from_url(settings.REDIS_URL, password=settings.REDIS_PASSWORD)
+		print(settings.REDIS_URL)
+		self.redis = await redis.from_url(settings.REDIS_URL)
 
 	async def close(self):
 		if self.redis:
