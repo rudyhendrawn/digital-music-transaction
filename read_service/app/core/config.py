@@ -6,7 +6,7 @@ env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
 
 class Settings:
-	DATABASE_URL: str = "sqlite:///./chinook.db"
+	DATABASE_URL: str = "sqlite:///../chinook.sqlite"
 	REDIS_URL: str = "redis://localhost:6379/0"
 
 settings = Settings()

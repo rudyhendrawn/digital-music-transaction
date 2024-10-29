@@ -8,13 +8,16 @@ class AlbumBase(BaseModel):
 
 class AlbumCreate(AlbumBase):
 	Title: str
-	ArtisId: int
+	ArtistId: int
 
 class AlbumUpdate(AlbumBase):
 	pass
 
 class Album(AlbumBase):
-	Id: int
+	Id: int = Field(..., alias="AlbumId")
+	Title: str
+	ArtistId: int
 
 	class Config:
 		orm_mode = False
+		allow_population_by_field_name = True
