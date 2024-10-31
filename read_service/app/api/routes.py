@@ -20,7 +20,7 @@ async def read_album(album_id: int):
 	else:
 		raise HTTPException(status_code=404, detail="Album not found")
 
-@router.get("/album", response_model=List[Album])
+@router.get("/getalbum", response_model=List[Album])
 @cache(expire=60)
 async def read_albums():
 	query = "SELECT * FROM Album"
