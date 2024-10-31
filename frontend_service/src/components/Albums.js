@@ -59,8 +59,8 @@ export const Albums = () => {
 								<td>{album.title}</td>
 								<td>{album.artistid}</td>
 								<td>
-									<a href="#" class="btn btn-secondary btn-sm">Edit</a>
-									<a href="#" class="btn btn-danger btn-sm" onClick={e => del(album.id)}>Delete</a>
+									<a href="#" className="btn btn-secondary btn-sm">Edit</a>
+									<a href="#" className="btn btn-danger btn-sm" onClick={() => del(album.id)}>Delete</a>
 								</td>
 							</tr>
 						);
