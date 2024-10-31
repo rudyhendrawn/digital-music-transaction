@@ -48,12 +48,14 @@ export const Albums = () => {
 					<th scope="col">#</th>
 					<th scope="col">Title</th>
 					<th scope="col">Artist ID</th>
+					<th scope="col">Actions</th>
 					</tr>
 				</thead>
 				<tbody>
 					{albums.map(album => {
 						return (
 							<tr key={album.id}>
+								<td>{album.id}</td>
 								<td>{album.title}</td>
 								<td>{album.artistid}</td>
 								<td>
